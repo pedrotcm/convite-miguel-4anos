@@ -51,7 +51,7 @@ Para uma preview ainda melhor, você pode criar uma imagem personalizada de 1200
    - Coloque o arquivo `share-preview.jpg` na raiz do projeto
    - Edite o index.html, linha 16:
    ```html
-   <meta property="og:image" content="https://pedrotomecm.github.io/convite-miguel/share-preview.jpg">
+   <meta property="og:image" content="https://pedrotcm.github.io/convite-miguel-4anos/share-preview.jpg">
    ```
    - Faça o mesmo na linha 24 (twitter:image)
 
@@ -99,7 +99,7 @@ Depois de fazer o deploy:
 
 Atualmente configurado como:
 ```
-https://pedrotomecm.github.io/convite-miguel/
+https://pedrotcm.github.io/convite-miguel-4anos/
 ```
 
 Se seu repositório tiver nome diferente, atualize:
