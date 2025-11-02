@@ -12,6 +12,7 @@
             src: url('MAGNETOB.TTF') format('truetype');
             font-weight: bold;
             font-style: normal;
+            font-display: block;
         }
         
         * {
@@ -708,5 +709,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Garantir que a fonte Magneto seja carregada antes de exibir
+        document.fonts.ready.then(function() {
+            // Força um reflow após as fontes carregarem
+            document.body.style.opacity = '0.99';
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 10);
+        });
+    </script>
 </body>
 </html>
