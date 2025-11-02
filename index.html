@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Carros - Miguel 4 Anos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Anton&family=Oswald:wght@400;700&display=swap');
+
+        @font-face {
+            font-family: 'Magneto';
+            src: url('MAGNETOB.TTF') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .convite {
+            width: 100vw;
+            min-height: 100vh;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            background: #000;
+        }
+        
+        /* Imagem de fundo */
+        .background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+            z-index: 1;
+        }
+        
+        /* Overlay gradiente removido - nova imagem tem espaço suficiente */
+        
+        /* Container principal do conteúdo */
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 240px;
+        }
+        
+        /* Texto "Foi dada a largada!" */
+        .largada-container {
+            margin-top: 20px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .largada-texto {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 32px;
+            font-style: italic;
+            color: #000;
+            text-shadow:
+                1px 1px 0 #FFF,
+                2px 2px 0 #FFD700,
+                3px 3px 5px rgba(255,255,255,0.9),
+                0 0 15px rgba(255,255,255,0.8);
+            letter-spacing: 1px;
+            animation: entrada 1s ease-out;
+        }
+        
+        @keyframes entrada {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Logo Carros com imagem */
+        .logo-container {
+            margin-top: -30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-carros {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+        }
+
+        .logo-texto {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Magneto', 'Bangers', cursive;
+            font-size: 40px;
+            color: #C0C0C0;
+            background: linear-gradient(180deg,
+                #FFF 0%,
+                #F8F8F8 10%,
+                #E8E8E8 25%,
+                #D0D0D0 40%,
+                #B8B8B8 50%,
+                #D0D0D0 60%,
+                #E8E8E8 75%,
+                #F8F8F8 90%,
+                #FFF 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-text-stroke: 1px #000;
+            paint-order: stroke fill;
+            text-shadow: none;
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.4))
+                    drop-shadow(0 0 10px rgba(255,255,255,0.5));
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            z-index: 10;
+            animation: pulsar-nome 2s ease-in-out infinite;
+        }
+        
+        /* Número da idade */
+        .idade-container {
+            margin-top: -20%;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .numero-idade {
+            font-family: 'Magneto', 'Bebas Neue', cursive;
+            font-size: 60px;
+            color: #C0C0C0;
+            background: linear-gradient(180deg,
+                #FFF 0%,
+                #F8F8F8 10%,
+                #E8E8E8 25%,
+                #D0D0D0 40%,
+                #B8B8B8 50%,
+                #D0D0D0 60%,
+                #E8E8E8 75%,
+                #F8F8F8 90%,
+                #FFF 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 0.8;
+            display: inline-block;
+            font-style: italic;
+            -webkit-text-stroke: 1.5px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5))
+                    drop-shadow(0 0 15px rgba(255,255,255,0.6));
+        }
+        
+        @keyframes pulsar {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        @keyframes pulsar-nome {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.08);
+            }
+        }
+        
+        .anos-texto {
+            font-family: 'Magneto', 'Anton', sans-serif;
+            font-size: 38px;
+            color: #C0C0C0;
+            background: linear-gradient(180deg,
+                #FFF 0%,
+                #F8F8F8 10%,
+                #E8E8E8 25%,
+                #D0D0D0 40%,
+                #B8B8B8 50%,
+                #D0D0D0 60%,
+                #E8E8E8 75%,
+                #F8F8F8 90%,
+                #FFF 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-text-stroke: 1.5px #000;
+            paint-order: stroke fill;
+            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.5))
+                    drop-shadow(0 0 12px rgba(255,255,255,0.5));
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: -8px;
+        }
+        
+        /* Nome removido - agora está dentro da logo */
+        
+        /* Informações da festa */
+        .info-section {
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+            right: 0;
+            padding: 0 30px;
+            text-align: center;
+            z-index: 20;
+            width: 100%;
+        }
+
+        .data-hora-texto {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: #FFF;
+            text-transform: uppercase;
+            text-shadow:
+                2px 2px 0 #000,
+                0 0 15px rgba(0,0,0,0.9);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .local-texto {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            color: #FFD700;
+            text-transform: uppercase;
+            text-shadow:
+                2px 2px 0 #000,
+                0 0 15px rgba(0,0,0,0.9);
+            margin-bottom: 5px;
+        }
+
+        .endereco-completo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            color: #FFF;
+            line-height: 1.3;
+            text-shadow:
+                2px 2px 4px #000,
+                0 0 10px rgba(0,0,0,0.95);
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .contato-info {
+            margin-top: 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            color: #FFD700;
+            text-shadow:
+                2px 2px 4px #000,
+                0 0 10px rgba(0,0,0,0.95);
+            font-weight: 500;
+            display: none; /* Comentado conforme solicitado */
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        .whatsapp-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #FFD700;
+            filter: drop-shadow(2px 2px 4px #000);
+        }
+        
+        /* Botões de ação */
+        .botoes-wrapper {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            z-index: 20;
+            width: 100%;
+        }
+
+        .botoes-wrapper a {
+            flex: 1;
+            position: relative;
+        }
+
+        .botao-acao {
+            background: #C41E3A;
+            border-radius: 8px;
+            padding: 28px 15px 12px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            width: 100%;
+            min-height: 60px;
+        }
+
+        .botao-acao:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .botao-icon {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 36px;
+            background: #C41E3A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+            flex-shrink: 0;
+        }
+
+        .botao-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #FFF;
+        }
+
+        .botao-texto {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 14px;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.1;
+            text-align: center;
+        }
+        
+        /* Mensagem final */
+        .mensagem-final-container {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            padding: 0 30px;
+            text-align: center;
+            z-index: 20;
+            width: 100%;
+        }
+
+        .mensagem-final-texto {
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #FFD700;
+            text-shadow:
+                2px 2px 0 #FF0000,
+                3px 3px 0 #000,
+                5px 5px 12px rgba(0,0,0,0.95),
+                0 0 25px rgba(255,215,0,0.3);
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+            animation: balancar 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes balancar {
+            0%, 100% { 
+                transform: rotate(-1.5deg) scale(1);
+            }
+            50% { 
+                transform: rotate(1.5deg) scale(1.03);
+            }
+        }
+        
+        /* Elementos decorativos - Raios (ocultos no mobile) */
+        .raio-decorativo {
+            display: none;
+        }
+
+        /* Bandeira quadriculada decorativa (oculta no mobile) */
+        .bandeira-decorativa {
+            display: none;
+        }
+        
+        /* Media queries para tablets e desktops */
+        @media screen and (min-width: 768px) {
+            .largada-texto {
+                font-size: 42px;
+            }
+
+            .logo-carros {
+                max-width: 500px;
+            }
+
+            .logo-texto {
+                font-size: 68px;
+                letter-spacing: 5px;
+            }
+
+            .numero-idade {
+                font-size: 160px;
+                -webkit-text-stroke: 3px #000;
+            }
+
+            .anos-texto {
+                font-size: 60px;
+                -webkit-text-stroke: 2px #000;
+            }
+
+            .data-hora-texto {
+                font-size: 28px;
+            }
+
+            .local-texto {
+                font-size: 26px;
+            }
+
+            .endereco-completo {
+                font-size: 20px;
+            }
+
+            .contato-info {
+                font-size: 22px;
+            }
+
+            .whatsapp-icon {
+                width: 26px;
+                height: 26px;
+            }
+
+            .botoes-wrapper {
+                gap: 20px;
+                padding: 0 50px;
+            }
+
+            .botao-acao {
+                padding: 32px 20px 15px;
+                min-height: 70px;
+            }
+
+            .botao-icon {
+                width: 42px;
+                height: 42px;
+                top: -21px;
+            }
+
+            .botao-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .botao-texto {
+                font-size: 15px;
+            }
+
+            .mensagem-final-texto {
+                font-size: 34px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            body {
+                padding: 20px;
+            }
+
+            .convite {
+                width: 100%;
+                height: auto;
+                max-width: 500px;
+                aspect-ratio: 5 / 7;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            }
+
+            .content-wrapper {
+                height: auto;
+                min-height: auto;
+                padding-bottom: 0;
+                flex: 1;
+                justify-content: flex-start;
+                padding-top: 3%;
+            }
+
+            .largada-container {
+                margin-top: 0;
+            }
+
+            .largada-texto {
+                font-size: 2.5vw;
+            }
+
+            .logo-container {
+                margin-top: -2%;
+            }
+
+            .logo-carros {
+                max-width: 60%;
+            }
+
+            .logo-texto {
+                font-size: 4vw;
+            }
+
+            .idade-container {
+                margin-top: 2%;
+            }
+
+            .numero-idade {
+                font-size: 10vw;
+            }
+
+            .anos-texto {
+                font-size: 4vw;
+            }
+
+            .info-section {
+                bottom: 28%;
+            }
+
+            .data-hora-texto {
+                font-size: 1.4vw;
+            }
+
+            .local-texto {
+                font-size: 1.4vw;
+            }
+
+            .endereco-completo {
+                font-size: 1.3vw;
+            }
+
+            .botoes-wrapper {
+                bottom: 14%;
+                padding: 0 10%;
+                gap: 3%;
+            }
+
+            .botao-acao {
+                padding: 20px 10px 10px;
+                min-height: 50px;
+            }
+
+            .botao-icon {
+                width: 30px;
+                height: 30px;
+                top: -15px;
+            }
+
+            .botao-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .botao-texto {
+                font-size: 1.1vw;
+            }
+
+            .mensagem-final-container {
+                bottom: 3%;
+            }
+
+            .mensagem-final-texto {
+                font-size: 2vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="convite">
+        <!-- Imagem de fundo -->
+        <img src="background.jpg"
+             alt="Carros Background"
+             class="background-img">
+
+        <!-- Conteúdo principal -->
+        <div class="content-wrapper">
+            <!-- Texto de largada -->
+            <div class="largada-container">
+                <div class="largada-texto">Foi dada a largada!</div>
+            </div>
+            
+            <!-- Logo Carros -->
+            <div class="logo-container">
+                <div class="logo-carros">
+                    <img src="logo-cars.png" alt="Logo Cars" class="logo-img">
+                    <div class="logo-texto">MIGUEL</div>
+                </div>
+            </div>
+            
+            <!-- Idade -->
+            <div class="idade-container">
+                <div class="numero-idade">4</div>
+                <div class="anos-texto">anos</div>
+            </div>
+        </div>
+        
+        <!-- Elementos decorativos -->
+        <div class="raio-decorativo raio1"></div>
+        <div class="raio-decorativo raio2"></div>
+        <div class="raio-decorativo raio3"></div>
+        <div class="bandeira-decorativa"></div>
+        
+        <!-- Informações da festa -->
+        <div class="info-section">
+            <div class="data-hora-texto">DOMINGO, 30 DE NOVEMBRO ÀS 14:00 HORAS</div>
+            <div class="local-texto">SALÃO DE FESTAS</div>
+            <div class="endereco-completo">
+                RUA CAMPOS SALES, 1545, BAIRRO VILA BOA VISTA - BARUERI-SP
+            </div>
+            <div class="contato-info">
+                <div class="whatsapp-icon">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path>
+                    </svg>
+                </div>
+                <span>(11) 96322-2648</span>
+            </div>
+        </div>
+        
+        <!-- Botões de ação -->
+        <div class="botoes-wrapper">
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Campos+Sales,+1545,+Vila+Boa+Vista,+Barueri,+SP" target="_blank" style="text-decoration: none;">
+                <div class="botao-acao">
+                    <div class="botao-icon">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M256 17.108c-75.73 0-137.122 61.392-137.122 137.122.055 23.25 6.022 46.107 11.58 56.262L256 494.892l119.982-274.244h-.063c11.27-20.324 17.188-43.18 17.202-66.418C393.122 78.5 331.73 17.108 256 17.108zm0 68.56a68.56 68.56 0 0 1 68.56 68.562A68.56 68.56 0 0 1 256 222.79a68.56 68.56 0 0 1-68.56-68.56A68.56 68.56 0 0 1 256 85.67z"/>
+                        </svg>
+                    </div>
+                    <div class="botao-texto">
+                        COMO<br>
+                        CHEGAR
+                    </div>
+                </div>
+            </a>
+            <a href="https://wa.me/5511963222648?text=Olá!%20Gostaria%20de%20confirmar%20minha%20presença%20na%20festa%20do%20Miguel!" target="_blank" style="text-decoration: none;">
+                <div class="botao-acao">
+                    <div class="botao-icon">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path>
+                        </svg>
+                    </div>
+                    <div class="botao-texto">
+                        CONFIRME SUA<br>
+                        PRESENÇA
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Mensagem final -->
+        <div class="mensagem-final-container">
+            <div class="mensagem-final-texto">
+                Confirme sua presença e prepare-se para a diversão!
+            </div>
+        </div>
+    </div>
+</body>
+</html>
