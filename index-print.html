@@ -47,17 +47,16 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 0;
+            padding: 20px;
             margin: 0;
         }
 
         .convite {
-            width: 100vw;
-            min-height: 100vh;
-            max-width: 600px;
+            width: 5in;
+            height: 7in;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 0 0 rgba(0,0,0,0);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
             background: #000;
         }
         
@@ -79,23 +78,24 @@
         .content-wrapper {
             position: relative;
             z-index: 10;
-            min-height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 240px;
+            padding-top: 3%;
+            padding-bottom: 0;
         }
         
         /* Texto "Foi dada a largada!" */
         .largada-container {
-            margin-top: 20px;
+            margin-top: 0;
             text-align: center;
             padding: 0 20px;
         }
 
         .largada-texto {
             font-family: 'Brush Script MT', cursive;
-            font-size: 32px;
+            font-size: 28px;
             font-style: italic;
             color: #000;
             text-shadow:
@@ -104,7 +104,6 @@
                 3px 3px 5px rgba(255,255,255,0.9),
                 0 0 15px rgba(255,255,255,0.8);
             letter-spacing: 1px;
-            animation: entrada 1s ease-out;
         }
         
         @keyframes entrada {
@@ -129,8 +128,8 @@
         }
 
         .logo-carros {
-            width: 100%;
-            max-width: 350px;
+            width: 60%;
+            max-width: none;
             height: auto;
             position: relative;
             display: flex;
@@ -151,7 +150,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-family: 'Magneto', 'Bangers', cursive;
-            font-size: 40px;
+            font-size: 36px;
             color: #C0C0C0;
             background: linear-gradient(180deg,
                 #FFF 0%,
@@ -175,12 +174,11 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             z-index: 10;
-            animation: pulsar-nome 2s ease-in-out infinite;
         }
         
         /* Número da idade */
         .idade-container {
-            margin-top: -20%;
+            margin-top: -18%;
             text-align: center;
             position: relative;
             padding: 0 20px;
@@ -188,7 +186,7 @@
 
         .numero-idade {
             font-family: 'Magneto', 'Bebas Neue', cursive;
-            font-size: 60px;
+            font-size: 80px;
             color: #C0C0C0;
             background: linear-gradient(180deg,
                 #FFF 0%,
@@ -233,7 +231,7 @@
         
         .anos-texto {
             font-family: 'Magneto', 'Anton', sans-serif;
-            font-size: 38px;
+            font-size: 44px;
             color: #C0C0C0;
             background: linear-gradient(180deg,
                 #FFF 0%,
@@ -263,7 +261,7 @@
         /* Informações da festa */
         .info-section {
             position: absolute;
-            bottom: 180px;
+            bottom: 12%;
             left: 0;
             right: 0;
             padding: 0 30px;
@@ -274,7 +272,7 @@
 
         .data-hora-texto {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 20px;
+            font-size: 16px;
             color: #FFF;
             text-transform: uppercase;
             text-shadow:
@@ -287,7 +285,7 @@
 
         .local-texto {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             color: #FFD700;
             text-transform: uppercase;
             text-shadow:
@@ -298,7 +296,7 @@
 
         .endereco-completo {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 19px;
+            font-size: 13px;
             color: #FFF;
             line-height: 1.3;
             text-shadow:
@@ -309,15 +307,15 @@
         }
 
         .contato-info {
-            margin-top: 12px;
+            margin-top: 8px;
             font-family: 'Oswald', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             color: #FFD700;
             text-shadow:
                 2px 2px 4px #000,
                 0 0 10px rgba(0,0,0,0.95);
             font-weight: 500;
-            display: none; /* Comentado conforme solicitado */
+            display: flex;
             align-items: center;
             gap: 10px;
             justify-content: center;
@@ -345,7 +343,7 @@
             left: 0;
             right: 0;
             padding: 0 30px;
-            display: flex;
+            display: none; /* Ocultado para impressão */
             flex-direction: row;
             gap: 15px;
             z-index: 20;
@@ -414,7 +412,7 @@
         /* Mensagem final */
         .mensagem-final-container {
             position: absolute;
-            bottom: 20px;
+            bottom: 3%;
             left: 0;
             right: 0;
             padding: 0 30px;
@@ -425,7 +423,7 @@
 
         .mensagem-final-texto {
             font-family: 'Anton', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             font-style: italic;
             color: #FFD700;
             text-shadow:
@@ -435,7 +433,6 @@
                 0 0 25px rgba(255,215,0,0.3);
             letter-spacing: 1.5px;
             line-height: 1.3;
-            animation: balancar 2.5s ease-in-out infinite;
         }
         
         @keyframes balancar {
@@ -456,185 +453,17 @@
         .bandeira-decorativa {
             display: none;
         }
-        
-        /* Media queries para tablets e desktops */
-        @media screen and (min-width: 768px) {
-            .largada-texto {
-                font-size: 42px;
-            }
 
-            .logo-carros {
-                max-width: 500px;
-            }
+        /* Media queries removidas - layout fixo 5x7in */
 
-            .logo-texto {
-                font-size: 68px;
-                letter-spacing: 5px;
-            }
-
-            .numero-idade {
-                font-size: 160px;
-                -webkit-text-stroke: 3px #000;
-            }
-
-            .anos-texto {
-                font-size: 60px;
-                -webkit-text-stroke: 2px #000;
-            }
-
-            .data-hora-texto {
-                font-size: 28px;
-            }
-
-            .local-texto {
-                font-size: 26px;
-            }
-
-            .endereco-completo {
-                font-size: 20px;
-            }
-
-            .contato-info {
-                font-size: 22px;
-            }
-
-            .whatsapp-icon {
-                width: 26px;
-                height: 26px;
-            }
-
-            .botoes-wrapper {
-                gap: 20px;
-                padding: 0 50px;
-            }
-
-            .botao-acao {
-                padding: 32px 20px 15px;
-                min-height: 70px;
-            }
-
-            .botao-icon {
-                width: 42px;
-                height: 42px;
-                top: -21px;
-            }
-
-            .botao-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-
-            .botao-texto {
-                font-size: 15px;
-            }
-
-            .mensagem-final-texto {
-                font-size: 34px;
-            }
-        }
-
-        @media screen and (min-width: 1024px) {
+        @media print {
             body {
-                padding: 20px;
+                background: #FFF;
+                padding: 0;
             }
 
             .convite {
-                width: 100%;
-                height: auto;
-                max-width: 500px;
-                aspect-ratio: 5 / 7;
-                box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-            }
-
-            .content-wrapper {
-                height: auto;
-                min-height: auto;
-                padding-bottom: 0;
-                flex: 1;
-                justify-content: flex-start;
-                padding-top: 3%;
-            }
-
-            .largada-container {
-                margin-top: 0;
-            }
-
-            .largada-texto {
-                font-size: 2.5vw;
-            }
-
-            .logo-container {
-                margin-top: -2%;
-            }
-
-            .logo-carros {
-                max-width: 60%;
-            }
-
-            .logo-texto {
-                font-size: 4vw;
-            }
-
-            .idade-container {
-                margin-top: 2%;
-            }
-
-            .numero-idade {
-                font-size: 10vw;
-            }
-
-            .anos-texto {
-                font-size: 4vw;
-            }
-
-            .info-section {
-                bottom: 28%;
-            }
-
-            .data-hora-texto {
-                font-size: 1.4vw;
-            }
-
-            .local-texto {
-                font-size: 1.4vw;
-            }
-
-            .endereco-completo {
-                font-size: 1.3vw;
-            }
-
-            .botoes-wrapper {
-                bottom: 14%;
-                padding: 0 10%;
-                gap: 3%;
-            }
-
-            .botao-acao {
-                padding: 20px 10px 10px;
-                min-height: 50px;
-            }
-
-            .botao-icon {
-                width: 30px;
-                height: 30px;
-                top: -15px;
-            }
-
-            .botao-icon svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .botao-texto {
-                font-size: 1.1vw;
-            }
-
-            .mensagem-final-container {
-                bottom: 3%;
-            }
-
-            .mensagem-final-texto {
-                font-size: 2vw;
+                box-shadow: none;
             }
         }
     </style>
@@ -724,7 +553,7 @@
         <!-- Mensagem final -->
         <div class="mensagem-final-container">
             <div class="mensagem-final-texto">
-                Confirme sua presença e prepare-se para a diversão!
+                Confirme sua presença até dia 23 e prepare-se para a diversão!
             </div>
         </div>
     </div>
