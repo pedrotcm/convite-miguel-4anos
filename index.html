@@ -176,6 +176,7 @@
             text-transform: uppercase;
             z-index: 10;
             animation: pulsar-nome 2s ease-in-out infinite;
+            visibility: hidden;
         }
         
         /* Número da idade */
@@ -211,6 +212,7 @@
             paint-order: stroke fill;
             filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5))
                     drop-shadow(0 0 15px rgba(255,255,255,0.6));
+            visibility: hidden;
         }
         
         @keyframes pulsar {
@@ -256,6 +258,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-top: -8px;
+            visibility: hidden;
         }
         
         /* Nome removido - agora está dentro da logo */
@@ -541,7 +544,7 @@
             .convite {
                 width: 100%;
                 height: auto;
-                max-width: 500px;
+                max-width: 420px;
                 aspect-ratio: 5 / 7;
                 box-shadow: 0 20px 60px rgba(0,0,0,0.8);
             }
@@ -560,7 +563,7 @@
             }
 
             .largada-texto {
-                font-size: 2.5vw;
+                font-size: 26px;
             }
 
             .logo-container {
@@ -568,11 +571,11 @@
             }
 
             .logo-carros {
-                max-width: 60%;
+                max-width: 75%;
             }
 
             .logo-texto {
-                font-size: 4vw;
+                font-size: 32px;
             }
 
             .idade-container {
@@ -580,11 +583,11 @@
             }
 
             .numero-idade {
-                font-size: 10vw;
+                font-size: 75px;
             }
 
             .anos-texto {
-                font-size: 4vw;
+                font-size: 42px;
             }
 
             .info-section {
@@ -592,15 +595,15 @@
             }
 
             .data-hora-texto {
-                font-size: 1.4vw;
+                font-size: 16px;
             }
 
             .local-texto {
-                font-size: 1.4vw;
+                font-size: 15px;
             }
 
             .endereco-completo {
-                font-size: 1.3vw;
+                font-size: 13px;
             }
 
             .botoes-wrapper {
@@ -626,7 +629,7 @@
             }
 
             .botao-texto {
-                font-size: 1.1vw;
+                font-size: 13px;
             }
 
             .mensagem-final-container {
@@ -634,7 +637,7 @@
             }
 
             .mensagem-final-texto {
-                font-size: 2vw;
+                font-size: 16px;
             }
         }
     </style>
@@ -732,6 +735,21 @@
     <script>
         // Garantir que a fonte Magneto seja carregada antes de exibir
         document.fonts.ready.then(function() {
+            // Mostra o nome após as fontes carregarem
+            var logoTexto = document.querySelector('.logo-texto');
+            var numeroIdade = document.querySelector('.numero-idade');
+            var anosTexto = document.querySelector('.anos-texto');
+
+            if (logoTexto) {
+                logoTexto.style.visibility = 'visible';
+            }
+            if (numeroIdade) {
+                numeroIdade.style.visibility = 'visible';
+            }
+            if (anosTexto) {
+                anosTexto.style.visibility = 'visible';
+            }
+
             // Força um reflow após as fontes carregarem
             document.body.style.opacity = '0.99';
             setTimeout(function() {
